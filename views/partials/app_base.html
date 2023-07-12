@@ -1,6 +1,13 @@
 {% extends "partials/base.html" %}
 
 {% block content %}
+
+{% if flash.systemMessage %}
+<div class="absolute top-0 left-0 w-full py-4 bg-blue-200 text-center font-bold">{{ flash.systemMessage }}</div>
+{% endif %}
+
 {% include "partials/navigation.html" %}
+
 {% block pageContent %}{% endblock %}
+
 {% endblock %}

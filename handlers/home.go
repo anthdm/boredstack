@@ -15,7 +15,7 @@ func HandleBored(c *fiber.Ctx) error {
 
 func HandleFlash(c *fiber.Ctx) error {
 	context := fiber.Map{
-		"msg": "a flash message for you user",
+		"systemMessage": "a flash message for you user",
 	}
 	return flash.WithData(c, context).RedirectBack("/")
 }
