@@ -1,7 +1,7 @@
 package data
 
 type Todo struct {
-	ID          uint64
+	ID          int64 `bun:",pk,autoincrement"`
 	Title       string
 	Description string
 }
