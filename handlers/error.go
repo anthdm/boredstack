@@ -5,5 +5,5 @@ import (
 )
 
 func ErrorHandler(c *fiber.Ctx, err error) error {
-	return c.Render("error/500", fiber.Map{})
+	return c.Render("error/500", nil)
 }

@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/anthdm/bs/db"
 	"github.com/anthdm/bs/handlers"
 	"github.com/anthdm/bs/util"
 	"github.com/gofiber/fiber/v2"
@@ -17,7 +16,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	db.Init()
 	app := fiber.New(fiber.Config{
 		ErrorHandler:          handlers.ErrorHandler,
 		DisableStartupMessage: true,
@@ -33,6 +31,12 @@ func main() {
 
 func initRoutes(app *fiber.App) {
 	app.Static("/public", "./public")
+
+	app.Use(handlers.FlashMiddleware)
+
 	app.Get("/", handlers.HandleHome)
 	app.Get("/bored", handlers.HandleBored)
+	app.Get("/flash", handlers.HandleFlash)
+
+	app.Use(handlers.NotFoundMiddleware)
 }
