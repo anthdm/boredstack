@@ -1,0 +1,10 @@
+{
+  "name": "The bored stack",
+  "scripts": {
+    "css": "tailwindcss -i ./assets/app.css -o ./public/assets/app.css --watch"
+  },
+  "devDependencies": {
+    "daisyui": "^3.1.7",
+    "tailwindcss": "3.3.2"
+  }
+}
