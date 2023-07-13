@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+	@apply py-2 px-3 border border-black rounded-lg cursor-pointer
+}
+
+.btn-sm {
+	@apply py-1 px-3
+}
+
+.btn-black {
+	@apply bg-black text-white hover:bg-gray-800
+}
