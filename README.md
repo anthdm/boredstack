@@ -6,9 +6,19 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 [![htmx](https://img.shields.io/badge/htmx-%23807C8C?style=for-the-badge&logo=htmx)](https://htmx.org/)
 ![Alpine.js](https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0)
+
+# Programming stack for the no bullshit builder. 
+
 </div>
 
-Programming stack for the no bullshit builder. 
 
 
-From Builder for Builder 💖
+---
+here the documentation
+---
+
+<div align="center">
+  
+  # From Builder for Builder 💖
+  
+</div>
