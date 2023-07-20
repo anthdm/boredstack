@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/anthdm/bs/cmd/bs/migrations"
 	"github.com/anthdm/bs/db"
+	"github.com/anthdm/bs/migrations"
 	"github.com/uptrace/bun/migrate"
 	"github.com/urfave/cli/v2"
 	"log"
