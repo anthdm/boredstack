@@ -6,6 +6,12 @@ require (
 	github.com/gofiber/fiber/v2 v2.47.0
 	github.com/gofiber/template/django/v3 v3.1.4
 	github.com/joho/godotenv v1.5.1
+	github.com/urfave/cli/v2 v2.3.0
+)
+
+require (
+	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
+	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 )
 
 require (
