@@ -70,7 +70,7 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 				Usage: "lock migrations",
 				Action: func(c *cli.Context) error {
 					ctx := context.Background()
-					migrator := migrate.NewMigrator(db.Bun, migrations)
+					migrator := newMigrator(migrations)
 
 					return migrator.Lock(ctx)
 				},
@@ -80,7 +80,7 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 				Usage: "unlock migrations",
 				Action: func(c *cli.Context) error {
 					ctx := context.Background()
-					migrator := migrate.NewMigrator(db.Bun, migrations)
+					migrator := newMigrator(migrations)
 
 					return migrator.Unlock(ctx)
 				},
@@ -90,7 +90,7 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 				Usage: "create Go migration",
 				Action: func(c *cli.Context) error {
 					ctx := context.Background()
-					migrator := migrate.NewMigrator(db.Bun, migrations)
+					migrator := newMigrator(migrations)
 
 					name := strings.Join(c.Args().Slice(), "_")
 					mf, err := migrator.CreateGoMigration(ctx, name)
@@ -107,7 +107,7 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 				Usage: "create up and down SQL migrations",
 				Action: func(c *cli.Context) error {
 					ctx := context.Background()
-					migrator := migrate.NewMigrator(db.Bun, migrations)
+					migrator := newMigrator(migrations)
 
 					name := strings.Join(c.Args().Slice(), "_")
 					files, err := migrator.CreateSQLMigrations(ctx, name)
@@ -127,7 +127,7 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 				Usage: "print migrations status",
 				Action: func(c *cli.Context) error {
 					ctx := context.Background()
-					migrator := migrate.NewMigrator(db.Bun, migrations)
+					migrator := newMigrator(migrations)
 
 					ms, err := migrator.MigrationsWithStatus(ctx)
 					if err != nil {
@@ -145,7 +145,7 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 				Usage: "mark migrations as applied without actually running them",
 				Action: func(c *cli.Context) error {
 					ctx := context.Background()
-					migrator := migrate.NewMigrator(db.Bun, migrations)
+					migrator := newMigrator(migrations)
 
 					group, err := migrator.Migrate(ctx, migrate.WithNopMigration())
 					if err != nil {
